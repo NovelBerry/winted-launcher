@@ -1,60 +1,98 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descarga Winted Launcher</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="logo_winted.ico" type="image/x-icon">
-    </head>
-<body>
+/* --- Estilos para la página de Descarga (descargar.html) --- */
 
-    <header class="navbar">
-        <div class="container">
-            <div class="logo">
-                <img src="logo_winted.png" alt="Logo Winted" width="40">
-                Winted Launcher v1
-            </div>
-            <nav>
-                <a href="index.html">Inicio</a>
-                <a href="index.html#porque">¿Por qué Winted?</a>
-                <a href="descargar.html" class="btn-download">DESCARGAR</a>
-            </nav>
-        </div>
-    </header>
+.version-options-container {
+    display: flex; /* Alinea las tarjetas una al lado de la otra */
+    gap: 20px; /* Espacio entre las tarjetas */
+    margin-top: 30px;
+    margin-bottom: 40px;
+    flex-wrap: wrap; /* Permite que las tarjetas salten de línea en pantallas pequeñas */
+}
 
-    <section class="download-page-section">
-        <div class="container download-content">
-            
-            <div class="download-info">
-                <h1>Descarga Winted Launcher</h1>
-                <p class="subtitle">El instalador incluye todas las dependencias (Java, librerías) para que no tengas que instalar nada más. ¡Descarga y Juega!</p>
-                
-                <a href="https://www.mediafire.com/file/orwoljvquy90v4t/WintedLauncher.zip/file">
-                    DESCARGAR Winted Launcher 
-                </a>
+.version-card {
+    flex: 1; /* Permite que las tarjetas crezcan y ocupen el espacio disponible */
+    min-width: 300px; /* Asegura que no se hagan demasiado pequeñas */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
 
-                <div class="compatibility-list">
-                    <h3>Compatibilidad y Requisitos:</h3>
-                    <ul>
-                        <li><span class="check-icon">&#10003;</span> Sistemas Operativos:Windows 11, 10, 8, 7.</li>
-                        <li><span class="check-icon">&#10003;</span> Requerimientos: Conexión a internet estable (solo para la descarga inicial de las versiones de Minecraft).</li>
-                        <li><span class="check-icon">&#10003;</span> Archivos: Un único archivo ejecutable (230 MB aprox.).</li>
-                    </ul>
-                </div>
-            </div>
+.version-card h2 {
+    font-size: 1.5em;
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid;
+}
 
-            <div class="download-image">
-                <img src="logo_winted.png" alt="Winted Logo" style="max-width: 250px; margin: 30px auto; display: block;">
-            </div>
-        </div>
-    </section>
+.version-card.recommended {
+    background-color: #2a3a50; /* Fondo azul oscuro */
+    border: 2px solid #1f6aa5; /* Borde de color de destaque */
+}
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Winted Studios. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+.version-card.recommended h2 {
+    border-color: #1f6aa5;
+    color: #4CAF50; /* Color verde para "RECOMENDADA" */
+}
 
-</body>
-</html>
+.version-card.legacy {
+    background-color: #292929; /* Fondo gris oscuro para la versión antigua */
+    border: 2px solid #555;
+}
+
+.version-card .description {
+    font-size: 0.9em;
+    min-height: 40px; /* Espacio uniforme */
+}
+
+.btn-version-download {
+    display: block;
+    text-align: center;
+    padding: 12px 20px;
+    margin: 15px 0;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.main-btn {
+    background-color: #1f6aa5;
+    color: white;
+}
+
+.main-btn:hover {
+    background-color: #165280;
+}
+
+.secondary-btn {
+    background-color: #555;
+    color: white;
+}
+
+.secondary-btn:hover {
+    background-color: #444;
+}
+
+/* Lista de características */
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+.features-list li {
+    margin-bottom: 5px;
+}
+
+.check-icon {
+    color: #4CAF50; /* Verde para las características positivas */
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.cross-icon {
+    color: #f44336; /* Rojo para las advertencias */
+    font-weight: bold;
+    margin-right: 5px;
+}
