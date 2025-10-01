@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias | Winted Launcher</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo_winted.ico" type="image/x-icon">
+    <style>
+        .news-container {
+            padding-top: 100px; 
+            min-height: calc(100vh - 150px); 
+        }
+        .news-article {
+            background-color: #1a1a2e; 
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .news-article h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        .news-article .date {
+            color: #aaaaaa;
+            display: block;
+            margin-bottom: 20px;
+        }
+        .news-article p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .important {
+            color: #ff4d4d; /* Rojo para destacar */
+            font-weight: bold;
+            margin-top: 25px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="logo_winted.png" alt="Logo Winted" width="40">
+                Winted Launcher
+            </div>
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="index.html#porque">¿Por qué Winted?</a>
+                <a href="noticias.html">Noticias</a>
+                <a href="descargar.html" class="btn-download">DESCARGAR</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="news-container container">
+        <h2>Últimas Noticias</h2>
+        
+        <div class="news-article">
+            <h1>Lanzamiento Oficial del Launcher Winted</h1>
+            <span class="date">01 de Octubre de 2025</span>
+            
+            <p>Winted Studios se complace en anunciar el lanzamiento oficial de Winted Launcher. Este proyecto nace de la necesidad de ofrecer a la comunidad de Minecraft una alternativa rápida, estable y libre de complicaciones, integrando todas las herramientas necesarias para una experiencia de juego superior.</p>
+
+            <p>Hemos dedicado tiempo y esfuerzo para crear un instalador único que incluye su propia versión de Java (JDK), eliminando la molestia de tener que instalar software adicional. Simplemente descarga nuestro ejecutable, corre la aplicación y empieza a jugar tu versión favorita de Minecraft, desde la más reciente hasta la clásica.</p>
+            
+            <p>Nuestro enfoque en la optimización asegura que Winted no solo inicie rápido, sino que también gestione los recursos de forma eficiente para que tú te concentres únicamente en la aventura.</p>
+            
+            <span class="important">IMPORTANTE: Esta es la Versión 1 del launcher (Beta Pública). Si tienes sugerencias, encuentras un error o quieres darnos tu opinión, contacta con Winted Studios en nuestro servidor de Discord: </span>
+            <a href="https://discord.gg/naSxE9N7y8" target="_blank" class="btn-primary" style="display: inline-block; margin-top: 10px;">Únete a Discord</a>
+        </div>
+        
+        </section>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Winted Studios. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
