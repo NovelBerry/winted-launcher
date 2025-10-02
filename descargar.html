@@ -1,71 +1,149 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Winted Launcher - Descarga Oficial</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="logo_winted.ico" type="image/x-icon">
     <style>
+        /* Reset ligero */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        /* Fondo con imagen (fondo_descargar.jpg) + overlay para mejor lectura */
         body {
-            font-family: Arial, sans-serif;
-            background: #0d1117;
+            font-family: "Inter", "Segoe UI", Arial, sans-serif;
+            min-height: 100vh;
             color: #fff;
-            margin: 0;
-            padding: 0;
-            text-align: center;
+            background-image:
+                linear-gradient(rgba(3,10,20,0.6), rgba(3,10,20,0.6)),
+                url('fondo_descargar.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
+
         header {
-            background: #161b22;
-            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 14px 24px;
+            background: rgba(0,0,0,0.25);
+            backdrop-filter: blur(4px);
         }
-        header .logo {
+
+        .logo {
             display: flex;
             align-items: center;
-            font-size: 20px;
-            font-weight: bold;
+            gap: 10px;
             color: #00c3ff;
-        }
-        header .logo img {
-            margin-right: 10px;
-        }
-        section {
-            padding: 50px 20px;
-        }
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: #00c3ff;
-        }
-        p {
+            font-weight: 700;
             font-size: 18px;
-            margin-bottom: 25px;
         }
-        .btn-download {
-            background: #00c3ff;
-            border: none;
-            color: #fff;
-            padding: 15px 35px;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-            text-decoration: none;
+        .logo img { width: 40px; height: 40px; object-fit: contain; }
+
+        nav {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        /* Botón volver al inicio (pequeño) */
+        .btn-back {
             display: inline-block;
-            box-shadow: 0 0 15px #00c3ff;
+            padding: 8px 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            color: #00c3ff;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(0,195,255,0.18);
+            transition: transform .12s ease, background .12s ease;
         }
-        .btn-download:hover {
-            background: #0099cc;
-            box-shadow: 0 0 25px #00c3ff;
+        .btn-back:hover { transform: translateY(-2px); background: rgba(0,195,255,0.06); }
+
+        /* Contenedor central */
+        .wrap {
+            max-width: 980px;
+            margin: 48px auto;
+            padding: 24px;
         }
+
+        .card {
+            background: rgba(0,0,0,0.45);
+            border-radius: 14px;
+            padding: 36px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            flex-wrap: wrap;
+            backdrop-filter: blur(6px);
+        }
+
+        .left {
+            flex: 1 1 380px;
+            min-width: 280px;
+        }
+        .right {
+            width: 260px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #00c3ff;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            margin-bottom: 18px;
+            font-size: 15px;
+            color: #dfefff;
+            opacity: 0.9;
+        }
+        .small {
+            font-size: 13px;
+            color: #cddffb;
+            opacity: 0.85;
+            margin-top: 8px;
+        }
+
+        /* Botón de descarga principal (mediano, azul) */
+        .btn-download {
+            display: inline-block;
+            background: linear-gradient(180deg, #00c3ff, #0099cc);
+            padding: 14px 32px;
+            border-radius: 10px;
+            color: white;
+            font-weight: 800;
+            font-size: 17px;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(0,195,255,0.16);
+            border: none;
+            transition: transform .12s ease, box-shadow .12s ease;
+            margin-top: 6px;
+        }
+        .btn-download:hover { transform: translateY(-3px); box-shadow: 0 18px 50px rgba(0,195,255,0.22); }
+
+        .logo-large {
+            max-width: 220px;
+            margin: 0 auto;
+            display: block;
+        }
+
         footer {
-            background: #161b22;
-            padding: 15px;
-            margin-top: 40px;
+            text-align: center;
+            padding: 18px 12px;
+            color: #cfefff;
+            opacity: 0.9;
+            font-size: 13px;
+            margin-top: 24px;
+        }
+
+        /* Responsivo */
+        @media (max-width: 720px) {
+            .card { padding: 20px; }
+            .right { width: 100%; order: -1; margin-bottom: 12px; }
+            h1 { font-size: 22px; }
         }
     </style>
 </head>
@@ -73,20 +151,42 @@
 
     <header>
         <div class="logo">
-            <img src="logo_winted.png" alt="Logo Winted" width="40">
+            <img src="logo_winted.png" alt="Logo Winted">
             Winted Launcher
         </div>
+
+        <nav>
+            <!-- Botón para volver al inicio -->
+            <a href="index.html" class="btn-back" title="Volver al inicio">← Volver al inicio</a>
+        </nav>
     </header>
 
-    <section>
-        <h1>🚀 Descarga Winted Launcher</h1>
-        <p>Esta es la versión más actual y estable de nuestro launcher.<br>
-        Compatible con <strong>Windows 7, 8, 9, 10, 11</strong>, además de <strong>Linux y Mac</strong>.</p>
-        
-        <a href="https://github.com/NovelBerry/winted-launcher/releases/download/Launcher/WintedSetupv3.exe" class="btn-download">
-            ⬇ Descargar Launcher
-        </a>
-    </section>
+    <main class="wrap">
+        <div class="card">
+            <div class="left">
+                <h1>🚀 Descarga Winted Launcher</h1>
+                <p class="subtitle">Esta es la versión más actual y estable de Winted Launcher. Incluye correcciones, optimizaciones y soporte para Mods.</p>
+
+                <a href="https://github.com/NovelBerry/winted-launcher/releases/download/Launcher/WintedSetupv3.exe"
+                   class="btn-download" title="Descargar Winted Launcher">
+                   ⬇ Descargar Launcher
+                </a>
+
+                <p class="small">
+                    Versión más reciente — Apta para <strong>Windows 7, 8, 9, 10, 11</strong>, y también para <strong>Linux</strong> y <strong>Mac</strong> (comprueba la guía de instalación para sistemas Unix).
+                </p>
+
+                <p class="small" style="margin-top:10px;">
+                    Nota: Si el navegador intenta abrir el archivo en vez de descargarlo, haz clic derecho y selecciona "Guardar enlace como…".
+                </p>
+            </div>
+
+            <div class="right">
+                <img src="logo_winted.png" alt="Logo Winted" class="logo-large">
+                <p class="small" style="margin-top:12px;">Instalador incluido con dependencias (Java/librerías) cuando corresponde.</p>
+            </div>
+        </div>
+    </main>
 
     <footer>
         <p>&copy; 2025 Winted Studios. Todos los derechos reservados.</p>
